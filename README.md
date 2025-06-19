@@ -1,9 +1,13 @@
 # Comandos y consejos para conocer Git y GitHub
 
 ## Índice
-- [Git](#Git)
-- [Instalación](#Instalación)
-- [Comandos básicos](#comandos-basicos)
+- [Git](#git)
+  - [Instalación](#instalacion)
+  - [Comandos de ayuda](#comandos-de-ayuda)
+  - [Comandos para configuración](#comandos-para-configuracion)
+  - [Comandos imprescindibles](#comandos-imprescindibles)
+- [GitHub](#github)
+  - [Documentación](#documentacion)
 
 ## Git
 
