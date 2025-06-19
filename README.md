@@ -2,12 +2,12 @@
 
 ## Índice
 - [Git](#git)
-  - [Instalación](#instalacion)
+  - [Instalacion](#instalacion)
   - [Comandos de ayuda](#comandos-de-ayuda)
-  - [Comandos para configuración](#comandos-para-configuracion)
+  - [Comandos para configuracion](#comandos-para-configuracion)
   - [Comandos imprescindibles](#comandos-imprescindibles)
 - [GitHub](#github)
-  - [Documentación](#documentacion)
+  - [Documentacion](#documentacion)
 
 ## Git
 
