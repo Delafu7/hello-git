@@ -15,7 +15,7 @@
 
 [Enlace a la página web oficial](https://git-scm.com/) 
 
-### Instalación
+### Instalacion
 
 Si se quiere instalar git para Windows se debe de descargar a traves de este enlace:
 [Enlace de Descarga](https://git-scm.com/downloads)
@@ -38,7 +38,7 @@ Si se quiere instalar git para Linux/Unix se debe de descargar con este comando:
 | git -v  | Nos muestra la versión actual descargada de git en nuestro sistema.          |
 | git -h  | Muestra una lista de comandos y opciones disponibles.          |
 
-### Comandos para configuración
+### Comandos para configuracion
 
 Para una configuración sencilla y básica de git usaremos el comando:
 
@@ -58,7 +58,7 @@ Como ejemplo configuramos nuestro nombre y email:
 ```
 
 Para buscar más información sobre la configuración de git entra a este [enlace](https://git-scm.com/docs/git-config)
-### Comandos inprescindibles
+### Comandos imprescindibles
 
 Para iniciar a trabajar con git debemos de inicializar un repositorio en nuestro proyecto. Con el terminal nos debemos situar en el directorio donde se encuentre el proyecto y ejecutaremos este código:
 
@@ -76,7 +76,7 @@ Para iniciar a trabajar con git debemos de inicializar un repositorio en nuestro
 
 [Enlace a la página web oficial](https://github.com/) 
 
-### Documentación
+### Documentacion
 
 
 [Enlace de Documentación](https://docs.github.com/es)
