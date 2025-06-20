@@ -66,7 +66,46 @@ Para iniciar a trabajar con git debemos de inicializar un repositorio en nuestro
     git init
 ```
 
+Por defecto la rama principal en la que trabajaremos en nuestro proyecto será la rama **main**. Pero puede pasar que tengamos configurada la rama principal que sea **master**. Para cambiar la rama actual de nuestro proyecto usamos este comando:
 
+```bash
+    git branch -m main
+```
+
+Para comprobar aquellos cambios que han sido realizados en el repositorio y no han sido o bien actualizados (**pull**)  o guardado una imagen de los cambios en el repositorio (**commit**), usaremos este comando:
+
+```bash
+    git status
+```
+
+Para añadir los cambios realizados en la fotografia del repositorio que vamos a almacenar empleando git es:
+
+- Para un archivo modificado:
+
+    ```bash
+        git add <archivo>
+    ```
+
+- Para todos los archivos modificados:
+
+    ```bash
+        git add .
+    ```
+Para almacenar la fotografia creada vamos a emplear, el comando:
+
+```bash
+    git commit -m "<mensaje>"
+```
+
+**¡¡¡IMPORTANTE!!!**: Son buenas prácticas realizar commits donde contengan grandes cambios realizados en el proyecto y cuyos mensajes sean muy significativos.
+
+
+Para visualizar las fotografias realizadas en un repositorio de git se utiliza el comando:
+
+```bash
+    git log
+```
+Existen diferentes formas de visualizar las fotografias en un repositorio de git. Pero todas ellas son variantes del comando de **git log**. Aqui os dejo un enlace significativo de esta funcionalidad:[variantes-log](https://www.atlassian.com/git/tutorials/git-log)
 
 
 
