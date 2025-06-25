@@ -4,6 +4,7 @@
 - [Git](#git)
   - [Instalación](#instalación)
   - [Conceptos importantes](#conceptos-importantes)
+  - [Archivo .gitignore](#archivo-gitignore)
   - [Comandos de ayuda](#comandos-de-ayuda)
   - [Comandos para configuración](#comandos-para-configuración)
   - [Comandos imprescindibles](#comandos-imprescindibles)
@@ -51,6 +52,40 @@ sudo apt-get install git
 - **Merge (fusión)**: Combinar cambios de diferentes ramas.
 - **.gitignore**: Archivo donde se especifican los archivos o carpetas que no deben rastrearse (ej. `node_modules`, `.env`).
 
+---
+### Archivo `.gitignore`
+
+El archivo `.gitignore` sirve para indicarle a Git qué archivos o carpetas **no deben incluirse** en el control de versiones. Esto es especialmente útil para ignorar archivos temporales, configuraciones locales o compilaciones automáticas.
+
+---
+
+#### 📁 ¿Qué se puede ignorar?
+
+Puedes usar diferentes mecanismos para especificar qué ignorar:
+
+- **Archivos por nombre exacto**
+  ```plaintext
+  archivo.txt
+
+- **Carpetas completas**
+  ```plaintext
+  carpeta/
+
+- **Patrones habituales**
+    - *.log: Ignora todos los archivos que terminen en .log.
+    - **/temp/: Ignora cualquier carpeta temp en cualquier subdirectorio.
+
+---
+#### Caracteres especiales que puedes usar
+| Patrón | Significado                   | Ejemplo                                                              |
+|--------|-------------------------------|----------------------------------------------------------------------|
+| `*`    | Cero o más caracteres         | `*.tmp` ignora todos los archivos que terminan en `.tmp`            |
+| `?`    | Un solo carácter              | `config?.json` ignora `config1.json`, `configA.json`, etc.          |
+| `!`    | Negación, para no ignorar     | `!important.log` mantiene este archivo aunque `*.log` esté ignorado |
+| `[]`   | Lista de caracteres permitidos| `file[1-3].txt` ignora `file1.txt`, `file2.txt`, `file3.txt`         |
+
+> 💡 Puedes combinar reglas en el archivo `.gitignore`, separándolas por líneas.  
+> Las líneas en blanco se ignoran y las que comienzan con `#` son comentarios.
 ---
 
 ### Comandos de ayuda
@@ -173,14 +208,15 @@ Crear y cambiar de rama:
 
 ```bash
 git branch <nombre-rama>
-git checkout <nombre-rama>
+git switch <nombre-rama>  # o git checkout <nombre-rama>
 ```
 
 Crear y cambiar en un solo paso:
 
 ```bash
-git checkout -b <nombre-rama>
+git checkout -b <nombre-rama> # o git switch -c <nombre-rama>
 ```
+Según la propia documentación de git es más recomendable usar el comando switch para cambiar entre ramas. Sin embargo, tanto checkout como switch son válidos.
 
 Fusionar ramas:
 
@@ -193,7 +229,52 @@ Eliminar ramas:
 ```bash
 git branch -d <nombre-rama>
 ```
+---
+### 🔍 Comando `git diff`
 
+El comando `git diff` se utiliza para **ver las diferencias** entre:
+
+- Archivos modificados y el último commit
+- Dos commits específicos
+- Dos ramas
+- Staging area y el directorio de trabajo
+
+---
+
+#### 🧪 Usos comunes
+
+| Comando | Qué muestra |
+|--------|--------------|
+| `git diff` | Cambios entre el **directorio de trabajo** y el **staging area** |
+| `git diff --staged` o `git diff --cached` | Cambios entre el **staging area** y el último commit |
+| `git diff rama1 rama2` | Diferencias entre dos ramas |
+| `git diff commit1 commit2` | Diferencias entre dos commits específicos |
+| `git diff archivo.txt` | Diferencias de un archivo concreto respecto al último commit |
+
+---
+
+#### 💡 Ejemplo práctico
+
+```bash
+git diff
+```
+Te mostrará qué líneas han cambiado, añadido o eliminado antes de hacer git add.
+```bash
+git diff --staged
+```
+Muestra los cambios que ya has añadido al área de staging, pero que aún no has commiteado.
+
+```bash
+git diff main feature-login
+```
+Muestra los cambios entre la rama main y feature-login.
+
+#### 🎨 Colores
+
+    Por defecto, las diferencias están coloreadas para facilitar su lectura:
+     - 🔴 Rojo → líneas eliminadas
+     - 🟢 Verde → líneas añadidas
+---
 ---
 
 ### Trabajo con repositorios remotos
