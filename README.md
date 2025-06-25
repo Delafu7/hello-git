@@ -223,7 +223,7 @@ git config --global alias.lg "log --oneline --graph --all"
 
 ---
 ---
-### 🏷️ Git Tag
+### Git Tag
 
 El comando `git tag` se utiliza para crear **etiquetas** en puntos específicos del historial de commits, normalmente para **marcar versiones** importantes (por ejemplo: `v1.0`, `v2.1`, etc.).
 
@@ -318,7 +318,7 @@ git branch -d <nombre-rama>
 ```
 ---
 
-### 🔀 Resolución de conflictos durante un merge
+### Resolución de conflictos durante un merge
 Cuando se produce un conflicto al hacer git merge, Git te pedirá que lo resuelvas manualmente. Sin embargo, puedes usar opciones automáticas para quedarte con una versión específica:
 - Quedarse con los cambios de la rama actual (descartar los de la rama fusionada):
 ```bash
@@ -331,7 +331,7 @@ git merge -X theirs <nombre-rama>
 **`⚠️ Estas opciones solo funcionan si hay un conflicto en el mismo archivo. Se deben usar con precaución, ya que descartan cambios de una de las ramas.`**
 
 ---
-### 🔍 Comando `git diff`
+### Comando `git diff`
 
 El comando `git diff` se utiliza para **ver las diferencias** entre:
 
