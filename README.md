@@ -13,7 +13,9 @@
   - [Ramas y fusión](#ramas-y-fusión)
   - [Resolución de conflictos](#resolucion-de-conflictos-durante-un-merge)
   - [Comando git diff](#comando-git-diff)
+  - [Git Stash](#git-stash)
   - [Trabajo con repositorios remotos](#trabajo-con-repositorios-remotos)
+  - [Comandos avanzados](#comandos-avanzados)
 - [GitHub](#git-hub)
   - [¿Qué es GitHub?](#qué-es-github)
   - [Documentación](#documentación)
@@ -377,6 +379,69 @@ Muestra los cambios entre la rama main y feature-login.
      - 🟢 Verde → líneas añadidas
 ---
 ---
+### Git Stash
+
+El comando `git stash` te permite **guardar temporalmente cambios no confirmados** (modificados o no añadidos) y dejar tu directorio de trabajo limpio, sin perder esos cambios.
+
+Es ideal cuando necesitas cambiar de rama rápidamente pero no quieres hacer commit aún.
+
+---
+
+####📦 Guardar cambios actuales
+
+```bash
+git stash
+```
+Esto guarda los cambios y revierte el directorio de trabajo al último commit.
+
+    ✅ Incluye archivos modificados, pero no guarda archivos nuevos sin añadir (untracked) ni ignorados.
+---
+#### 📌 Opciones útiles
+
+##### Guardar con mensaje:
+```bash
+git stash save "mensaje descriptivo"
+```
+##### Incluir archivos nuevos (`untracked`):
+```bash
+git stash -u
+```
+##### Ver todas las entradas guardadas:
+```bash
+git stash list
+```
+##### Ver detalles de un stash:
+```bash
+git stash show -p stash@{0}
+```
+#### 🔄 Recuperar cambios guardados
+
+##### Aplicar el stash más reciente:
+```bash
+git stash apply
+```
+  `Los cambios se aplican pero el stash no se elimina.`
+##### Aplicar y eliminar el stash (recomendado si ya no lo necesitas):
+
+```bash
+git stash pop
+```
+##### Aplicar un stash específico:
+```bash
+git stash apply stash@{1}
+```
+#### 🗑️ Eliminar stashes
+
+##### Eliminar uno en específico:
+```bash
+git stash drop stash@{0}
+```
+##### Eliminar todos:
+```bash
+git stash clear
+```
+---
+---
 
 ### Trabajo con repositorios remotos
 
@@ -403,6 +468,57 @@ Obtener cambios:
 ```bash
 git pull origin main
 ```
+---
+---
+### Comandos avanzados
+Estos comandos te permiten manipular el historial, depurar errores y mejorar el flujo de trabajo en equipos grandes o proyectos complejos.
+
+`git cherry-pick`
+
+Aplica un commit específico de otra rama en tu rama actual.
+
+```bash
+git cherry-pick <hash-del-commit>
+```
+💡 Ideal para aplicar correcciones sin fusionar ramas completas.
+
+--- 
+\
+`git bisect`
+
+Permite encontrar qué commit introdujo un bug usando búsqueda binaria. Es ideal cuando:
+
+  - Un bug aparece pero no sabes cuándo surgió.
+
+  - Tienes muchos commits entre el estado bueno y el defectuoso.
+
+  - Quieres evitar revisar el historial manualmente.
+```bash
+git bisect start
+git bisect bad              # el commit actual tiene el bug
+git bisect good <hash>      # este commit funciona correctamente
+```
+Git irá saltando entre versiones hasta hallar el commit exacto que rompió el código.
+
+---
+\
+`git rebase`
+
+Sirve para reescribir el historial y aplicar commits como si vinieran de otra rama, manteniendo un historial limpio y lineal. En lugar de crear un `commit` de fusión (como `git merge`), rebase "reaplica" tus commits sobre otra rama, como si los hubieras creado después de ella.
+```bash
+git rebase <rama-base>
+```
+Ejemplo:
+```bash
+git rebase main
+```
+También puedes usar:
+```bash
+git rebase -i HEAD~3
+```
+Para editar o combinar los últimos 3 commits interactivamente.
+`⚠️ Evita rebase en ramas compartidas públicamente.`
+---
 
 ---
 ## GitHub 
