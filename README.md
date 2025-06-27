@@ -519,7 +519,36 @@ git rebase -i HEAD~3
 Para editar o combinar los últimos 3 commits interactivamente.
 `⚠️ Evita rebase en ramas compartidas públicamente.`
 ---
+\
+`git commit --amend`
 
+Corrige el último commit, ya sea para cambiar el mensaje o añadir archivos olvidados.
+```bash
+git add archivo-olvidado
+git commit --amend
+```
+---
+\
+`git clean`
+
+`git clean` es un comando que se usa para eliminar archivos que no están siendo rastreados por Git, es decir, archivos que no han sido añadidos con git add.
+
+Esto incluye:
+
+  - Archivos nuevos que nunca se han añadido al repositorio.
+
+  - Archivos generados automáticamente (por ejemplo, binarios, logs, temporales).
+
+  - También puede eliminar directorios y archivos ignorados, si se especifica.
+
+**`⚠️ Advertencia importante: git clean elimina archivos físicamente del disco. No se pueden recuperar a menos que tengas una copia. ¡Usa -n primero para ver qué se va a borrar!`**
+```bash
+git clean -n    # Muestra qué se eliminaría
+git clean -f    # Elimina archivos no rastreados
+git clean -fd   # Elimina archivos y carpetas
+```
+---
+---
 ---
 ## GitHub 
 
