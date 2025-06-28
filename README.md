@@ -8,7 +8,7 @@
   - [Comandos de ayuda](#comandos-de-ayuda)
   - [Comandos para configuración](#comandos-para-configuración)
   - [Comandos imprescindibles](#comandos-imprescindibles)
-  - [Alias útiles](#alias-útiles)
+  - [Alias](#alias)
   - [Git Tag](#git-tag)
   - [Ramas y fusión](#ramas-y-fusión)
   - [Resolución de conflictos](#resolucion-de-conflictos-durante-un-merge)
@@ -16,6 +16,9 @@
   - [Git Stash](#git-stash)
   - [Trabajo con repositorios remotos](#trabajo-con-repositorios-remotos)
   - [Comandos avanzados](#comandos-avanzados)
+  - [Submódulos](#submodulos)
+  - [Git Hooks](#git-hooks)
+  - [Tips adicionales](#tips-adicionales)
 - [GitHub](#git-hub)
   - [¿Qué es GitHub?](#qué-es-github)
   - [Documentación](#documentación)
@@ -202,7 +205,7 @@ git reset --hard HEAD@{1}
 
 ---
 ---
-#### Alias
+### Alias
   Git nos permite crear alias, para ejecutar comandos largos y complejos de forma sencilla y eficaz.
   ```bash
       git config --global --alias.<palabra> '<comando>'
@@ -211,7 +214,7 @@ git reset --hard HEAD@{1}
 
 ---
 
-### Alias útiles
+#### Alias útiles
 
 Crear alias personalizados:
 
@@ -547,6 +550,65 @@ git clean -n    # Muestra qué se eliminaría
 git clean -f    # Elimina archivos no rastreados
 git clean -fd   # Elimina archivos y carpetas
 ```
+---
+---
+### Submódulos
+Los submódulos te permiten incluir repositorios Git dentro de otro, útil si trabajas con dependencias internas o microservicios.
+#### Añadir un submódulo
+
+```bash
+git submodule add https://github.com/usuario/proyecto-libreria.git ruta/
+```
+#### Clonar un repositorio con submódulos
+```bash
+git clone --recurse-submodules <url>
+```
+#### Inicializar y actualizar submódulos
+
+```bash
+git submodule init
+git submodule update
+```
+#### Actualizar submódulos a la última versión del remoto
+
+```bash
+git submodule update --remote
+```
+---
+---
+### Git Hooks
+
+Los hooks son scripts que se ejecutan automáticamente antes o después de acciones como commit, push o merge.
+
+Se guardan en `.git/hooks/`, y puedes personalizarlos para:
+- Ejecutar linters
+- Validar mensajes de commit
+- Correr tests antes del push
+Ejemplo: `pre-commit`
+```bash
+#!/bin/sh
+npm run lint
+```
+Actívalo copiando el script en `.git/hooks/pre-commit` y dándole permisos:
+
+```bash
+chmod +x .git/hooks/pre-commit
+```
+
+💡 Herramientas como [Husky](https://typicode.github.io/husky/) te ayudan a gestionar hooks en proyectos modernos.
+---
+---
+### Tips adicionales
+
+- Usa git status y git log constantemente.
+
+- Evita commits grandes y sin sentido como "Cambios", "update", etc.
+
+- Crea ramas por cada feature o bugfix.
+
+- Usa git stash para interrumpir tareas sin perder el trabajo.
+
+- Aprovecha alias para ahorrar tiempo.
 ---
 ---
 ---
