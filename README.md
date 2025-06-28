@@ -612,7 +612,9 @@ chmod +x .git/hooks/pre-commit
 ---
 ---
 ---
-## GitHub 
+---
+---
+## 🐙 GitHub
 
 ![imagen github](imagenes/github.png)
 
@@ -622,27 +624,66 @@ chmod +x .git/hooks/pre-commit
 
 ### ¿Qué es GitHub?
 
-GitHub es una plataforma basada en la web que permite alojar proyectos Git de forma remota. Facilita el trabajo colaborativo, control de versiones, revisión de código y despliegues automáticos.
+GitHub es una plataforma basada en la web que permite alojar proyectos Git de forma remota. Facilita el trabajo colaborativo, control de versiones, revisión de código, seguimiento de errores y automatización de flujos de trabajo.
+
+Permite colaborar con otras personas mediante:
+- *Issues* para reportar errores o sugerencias.
+- *Pull requests* para proponer cambios en el código.
+- *Revisiones de código* y comentarios línea por línea.
+- *GitHub Actions* para pruebas y despliegues automáticos.
 
 ---
 
-### Documentación
+### 📚 Documentación útil
 
-📚 [Documentación oficial en español](https://docs.github.com/es)
-
-- [Crear repositorio](https://docs.github.com/es/get-started/quickstart/create-a-repo)
-- [Crear pull request](https://docs.github.com/es/pull-requests)
+- [Documentación oficial en español](https://docs.github.com/es)
+- [Crear un repositorio](https://docs.github.com/es/get-started/quickstart/create-a-repo)
+- [Crear un pull request](https://docs.github.com/es/pull-requests)
 - [Gestionar ramas](https://docs.github.com/es/branches)
+- [GitHub Actions](https://docs.github.com/es/actions)
+- [Seguridad en repositorios](https://docs.github.com/es/code-security)
 
 ---
 
-### Consejos de uso
+### 🛠️ Consejos de uso
 
-- Usa `README.md` para describir tu proyecto.
-- Incluye una licencia si es de código abierto.
-- Usa `.gitignore` para evitar archivos innecesarios.
-- Utiliza *issues* para seguimiento de tareas y errores.
-- Emplea *pull requests* para revisión de código.
-- Activa *GitHub Actions* para automatizar pruebas o despliegues.
+- Crea un archivo `README.md` claro, usando Markdown, para describir el propósito y uso del proyecto.
+- Usa `.gitignore` para excluir archivos innecesarios del repositorio.
+- Añade una licencia (`LICENSE`) si es código abierto.
+- Usa `issues` y `milestones` para organizar tareas.
+- Usa `projects` (Kanban) para gestionar tareas visualmente.
+- Protege ramas importantes con políticas de revisión.
+- Configura *GitHub Actions* para CI/CD (pruebas, build, deploy).
+
+---
+
+## ✍️ Markdown en GitHub
+
+GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) para dar formato a textos. Se usa en archivos `README.md`, issues, wikis, comentarios y documentación.
+
+### Ejemplos útiles de sintaxis Markdown:
+
+| Elemento | Sintaxis | Ejemplo |
+|---------|----------|--------|
+| Título | `#`, `##`, ... | `## Título de nivel 2` |
+| Negrita | `**texto**` | **negrita** |
+| Cursiva | `*texto*` | *cursiva* |
+| Lista con viñetas | `-`, `*` | `- Elemento` |
+| Lista numerada | `1.` | `1. Paso uno` |
+| Enlace | `[texto](url)` | [GitHub](https://github.com) |
+| Imagen | `![alt](url)` | `![logo](logo.png)` |
+| Código en línea | `` `código` `` | `git status` |
+| Bloque de código | <pre>```bash<br>comando<br>```</pre> | ```bash git commit -m "mensaje" ``` |
+| Cita | `> texto` | > Esto es una cita |
+| Línea horizontal | `---` | --- |
+
+---
+
+### 🧪 Consejos Markdown para GitHub
+
+- Usa títulos para estructurar bien tus archivos `README.md`.
+- Añade capturas con `![nombre](ruta.png)` para guías visuales.
+- Usa bloques de código con lenguaje para resaltar (ej. ` ```python `).
+- Añade tablas para resumir información de forma clara.
 
 ---
