@@ -21,8 +21,13 @@
   - [Tips adicionales](#tips-adicionales)
 - [GitHub](#git-hub)
   - [¿Qué es GitHub?](#qué-es-github)
+  - [Conceptos clave](#conceptos-clave)
   - [Documentación](#documentación)
   - [Consejos de uso](#consejos-de-uso)
+  - [Markdown](#markdown)
+  - [¿Cómo hacer un Pull Request?](#como-hacer-un-pull-request)
+  - [Consejos para buenos Pull Requests](#consejos-para-buenos-pull-requests)
+
 
 ---
 
@@ -614,7 +619,7 @@ chmod +x .git/hooks/pre-commit
 ---
 ---
 ---
-## 🐙 GitHub
+## GitHub
 
 ![imagen github](imagenes/github.png)
 
@@ -624,28 +629,81 @@ chmod +x .git/hooks/pre-commit
 
 ### ¿Qué es GitHub?
 
-GitHub es una plataforma basada en la web que permite alojar proyectos Git de forma remota. Facilita el trabajo colaborativo, control de versiones, revisión de código, seguimiento de errores y automatización de flujos de trabajo.
+GitHub es una plataforma web que permite alojar proyectos utilizando Git como sistema de control de versiones. Su enfoque principal es facilitar el desarrollo colaborativo y la gestión de código fuente.
 
-Permite colaborar con otras personas mediante:
-- *Issues* para reportar errores o sugerencias.
-- *Pull requests* para proponer cambios en el código.
-- *Revisiones de código* y comentarios línea por línea.
-- *GitHub Actions* para pruebas y despliegues automáticos.
+Gracias a GitHub, puedes:
 
----
+- Guardar el historial de versiones del código.
 
-### 📚 Documentación útil
+- Trabajar en equipo en ramas independientes.
 
-- [Documentación oficial en español](https://docs.github.com/es)
-- [Crear un repositorio](https://docs.github.com/es/get-started/quickstart/create-a-repo)
-- [Crear un pull request](https://docs.github.com/es/pull-requests)
-- [Gestionar ramas](https://docs.github.com/es/branches)
-- [GitHub Actions](https://docs.github.com/es/actions)
-- [Seguridad en repositorios](https://docs.github.com/es/code-security)
+- Revisar, aprobar y fusionar cambios de otros colaboradores.
+
+- Automatizar tareas con flujos de trabajo (GitHub Actions).
+
+- Documentar proyectos con README.md, wikis y Markdown.
 
 ---
+---
+### Conceptos clave
 
-### 🛠️ Consejos de uso
+#### 📁 Repositorio
+
+Un **repositorio** es como una carpeta donde se guarda todo el proyecto: código, historial de cambios, documentación, imágenes, etc.
+👉 [Crear un repositorio](https://docs.github.com/es/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+
+#### 🌿 Rama (Branch)
+
+Una **rama** permite desarrollar nuevas funcionalidades sin afectar el código principal. La rama por defecto suele llamarse main o master.
+👉 [Gestionar ramas](https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+
+#### 🆚 Pull Request (PR)
+
+Un **pull request** es una solicitud para que tus cambios sean revisados y fusionados en otra rama (normalmente main). Es el centro del trabajo colaborativo.
+👉 [Crear un pull request](https://docs.github.com/es/pull-requests)
+
+#### 🔍 Code Review
+
+Es el proceso de revisar los cambios hechos en un PR. Puedes comentar línea por línea, sugerir mejoras o aprobar directamente los cambios.
+
+#### 🐞 Issues
+
+Un **issue** es una tarea o reporte, como un bug, sugerencia o nota. Puedes asignarlos, etiquetarlos y agruparlos en milestones.
+
+#### ⚙️ GitHub Actions
+
+**GitHub Actions** permite automatizar procesos como pruebas, despliegues o formatos del código, directamente desde GitHub.
+
+👉 [GitHub Actions](https://docs.github.com/es/actions)
+
+#### 🧾 README.md
+
+Es el archivo principal de presentación de un proyecto. Se escribe en Markdown y debe explicar:
+
+  - Qué hace el proyecto.
+
+  - Cómo instalarlo y usarlo.
+
+  - Créditos, licencia y enlaces útiles.
+
+--- 
+---
+### Documentación
+
+
+| Tema | Enlace |
+|--------|--------------|
+|Introducción a GitHub| [Ver enlace](https://docs.github.com/es/get-started)|
+|Crear repositorios| [Ver enlace](https://docs.github.com/es/repositories/creating-and-managing-repositories/quickstart-for-repositories)|
+|Pull Requests| [Ver enlace](https://docs.github.com/es/pull-requests)|
+|Ramas| [Ver enlace](https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)|
+|GitHub Actions| [Ver enlace](https://docs.github.com/es/actions)|
+|Seguridad y dependencias| [Ver enlace](https://docs.github.com/es/code-security)|
+
+---
+---
+
+### Consejos de uso
 
 - Crea un archivo `README.md` claro, usando Markdown, para describir el propósito y uso del proyecto.
 - Usa `.gitignore` para excluir archivos innecesarios del repositorio.
@@ -656,12 +714,15 @@ Permite colaborar con otras personas mediante:
 - Configura *GitHub Actions* para CI/CD (pruebas, build, deploy).
 
 ---
-
-## ✍️ Markdown en GitHub
+---
+### Markdown
 
 GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) para dar formato a textos. Se usa en archivos `README.md`, issues, wikis, comentarios y documentación.
 
-### Ejemplos útiles de sintaxis Markdown:
+👉[Documentación GitHub escritura Markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+
+#### Ejemplos útiles de sintaxis Markdown:
 
 | Elemento | Sintaxis | Ejemplo |
 |---------|----------|--------|
@@ -679,7 +740,7 @@ GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) pa
 
 ---
 
-### 🧪 Consejos Markdown para GitHub
+#### 🧪 Consejos Markdown
 
 - Usa títulos para estructurar bien tus archivos `README.md`.
 - Añade capturas con `![nombre](ruta.png)` para guías visuales.
@@ -687,3 +748,59 @@ GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) pa
 - Añade tablas para resumir información de forma clara.
 
 ---
+---
+### ¿Cómo hacer un Pull Request?
+
+ 1. **Haz un fork del repositorio (si no tienes acceso directo):**
+
+  Ve al repositorio y haz clic en `Fork`.
+
+ 2. **Clona tu fork en tu máquina local:**
+
+```bash
+git clone https://github.com/tu-usuario/nombre-del-repo.git
+cd nombre-del-repo
+```
+
+ 3. **Crea una nueva rama para trabajar:**
+
+  ```bash
+  git checkout -b mi-nueva-feature
+  ```
+  4. **Haz tus cambios, guarda y haz commit:**
+
+  ```bash
+  git add .
+  git commit -m "Añadir nueva funcionalidad"
+  ```
+
+   5. **Envía los cambios a tu repositorio en GitHub:**
+
+  ```bash
+  git push origin mi-nueva-feature
+  ```
+
+  6. **Abre el Pull Request desde GitHub:**
+
+  - Ve a tu repositorio en GitHub.
+
+  - Haz clic en el botón Compare & pull request.
+
+  - Escribe un título y una descripción clara del cambio.
+
+  - Haz clic en Create pull request.
+
+---
+
+### Consejos para buenos Pull Requests
+
+- Sé descriptivo: explica qué problema soluciona y cómo.
+
+- Mantén los cambios enfocados en una sola cosa.
+
+- Usa mensajes de commit claros.
+
+- Asegúrate de que el código compile y pase las pruebas.
+  
+
+
