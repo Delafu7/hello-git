@@ -25,7 +25,7 @@
   - [Documentación](#documentación)
   - [Consejos de uso](#consejos-de-uso)
   - [Markdown](#markdown)
-  - [¿Cómo hacer un Pull Request?](#como-hacer-un-pull-request)
+  - [¿Cómo hacer un Pull Request?](#¿como-hacer-un-pull-request?)
   - [Consejos para buenos Pull Requests](#consejos-para-buenos-pull-requests)
 
 
