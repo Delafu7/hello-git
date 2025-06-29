@@ -11,12 +11,12 @@
   - [Alias](#alias)
   - [Git Tag](#git-tag)
   - [Ramas y fusión](#ramas-y-fusión)
-  - [Resolución de conflictos](#resolucion-de-conflictos-durante-un-merge)
+  - [Resolución de conflictos](#resolución-de-conflictos-durante-un-merge)
   - [Comando git diff](#comando-git-diff)
   - [Git Stash](#git-stash)
   - [Trabajo con repositorios remotos](#trabajo-con-repositorios-remotos)
   - [Comandos avanzados](#comandos-avanzados)
-  - [Submódulos](#submodulos)
+  - [Submódulos](#submódulos)
   - [Git Hooks](#git-hooks)
   - [Tips adicionales](#tips-adicionales)
 - [GitHub](#git-hub)
@@ -25,7 +25,7 @@
   - [Documentación](#documentación)
   - [Consejos de uso](#consejos-de-uso)
   - [Markdown](#markdown)
-  - [¿Cómo hacer un Pull Request?](#¿como-hacer-un-pull-request?)
+  - [¿Cómo hacer un Pull Request?](#cómo-hacer-un-pull-request)
   - [Consejos para buenos Pull Requests](#consejos-para-buenos-pull-requests)
 
 
