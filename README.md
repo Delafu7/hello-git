@@ -27,7 +27,8 @@
   - [Markdown](#markdown)
   - [¿Cómo hacer un Pull Request?](#cómo-hacer-un-pull-request)
   - [Consejos para buenos Pull Requests](#consejos-para-buenos-pull-requests)
-
+- [Herramientas para Git y GitHub](#herramientas-para-git-y-github)
+- [Buenas prácticas](#buenas-prácticas)
 
 ---
 
@@ -801,6 +802,99 @@ cd nombre-del-repo
 - Usa mensajes de commit claros.
 
 - Asegúrate de que el código compile y pase las pruebas.
+
+---
+---
+---
   
+##  Herramientas para Git y GitHub
 
+Hay muchas herramientas que pueden ayudarte a trabajar de forma más eficiente con Git y GitHub. Aquí te dejo una selección recomendada:
 
+### 🖥️ GitHub Desktop
+
+- URL: [https://desktop.github.com](https://desktop.github.com)
+
+- Aplicación oficial de GitHub para trabajar con Git desde una interfaz gráfica.
+
+- Ideal para principiantes o quienes prefieren evitar la línea de comandos.
+
+- Permite hacer commits, ramas, merges y pull requests visualmente.
+
+### 🧠 GitKraken
+
+- URL: [https://www.gitkraken.com](https://www.gitkraken.com) 
+
+- Cliente Git con una interfaz visual moderna y potente.
+
+- Ideal para equipos y trabajo en ramas complejas.
+
+- Incluye funcionalidades para GitHub, GitLab, Bitbucket y más.
+
+### ⚙️ Sourcetree
+
+- URL: [https://www.sourcetreeapp.com](https://www.sourcetreeapp.com) 
+
+- Cliente Git gratuito desarrollado por Atlassian.
+
+- Permite visualizar commits, ramas y conflictos de forma clara.
+
+### 💻 Oh My Zsh + Plugins de Git
+
+- URL: [https://ohmyz.sh](https://ohmyz.sh)
+- Framework para mejorar tu terminal con Zsh.
+
+- Incluye temas y plugins para trabajar más cómodamente con Git (como mostrar rama actual, estado, etc.).
+
+### 📦 GitHub CLI
+
+```bash
+gh pr create
+gh repo clone user/repo
+```
+- URL: [https://cli.github.com](https://cli.github.com)
+
+- Interfaz de línea de comandos oficial de GitHub.
+
+- Permite gestionar issues, repos, pull requests y más desde el terminal.
+
+### 🧪 Repositorios para practicar
+
+  - Git-it: [https://github.com/jlord/git-it-electron](https://github.com/jlord/git-it-electron) 
+  Una app interactiva para aprender Git y GitHub paso a paso.
+
+  - Learn Git Branching: [https://learngitbranching.js.org/](https://learngitbranching.js.org/)  
+  Simulador visual para entender ramas y merges de forma práctica.
+
+----
+----
+----
+
+## Buenas prácticas
+  ### Git
+    1. **Organizar repositorios**: Crear repositorios independientes para distintos proyectos.
+    2. **Utiliza ramas**: Trabaja en ramas separadas para desarrollar nueva funcionalidad, corregir errores o experimentar con tu proyecto.
+    3. **Haz commits atómicos**: Cada `commit` debe representar una única unidad de cambio lógico, para facilitar la revisión y la correcciones en los cambios.
+    4. **Escribe mensajes de commit claros y significativos**.
+    5. **Mantén un historial limpio**: Evita enviar cambios innecesarios o conflictos, y usa la fusión de cambiosade(merge)cuadamente.
+    6. **Usa etiquetas**: Para marcar puntos importantes en el proyecto, como versiones.
+    7. **Haz revisiónes de código**: Antes de integrar el código en la rama principal, realiza una revisión del mismo.
+    8. **Resuelve conflictos**: Esto se aplica en cualquier caso, pero sobretodo a la hora fusionar ramas.
+    9. **Mantén copias de seguridad y haz push con regularidad**.
+    10. **Continua aprendiendo**.
+  
+  ### GitHub
+    1. **Personaliza tú perfil**.
+    2. **Crea un README**: Debe de proporcionar una descripción general del proyecto, instrucciones de instalación y configuración, información sobre cómo contribuir, y cualquier otra información relevante. 
+    3. **Licencia de software**: Añade una licencia a un repositorio para informar a otros usuarios de como lo pueden utilizar y qué limitaciones posee.
+    4. **Usa Pull Request**: Propon cambios de un repositorio a traves de Pull Request, en vez de modificar directamente la rama principal directamente.
+    5. **Revisión de código**: Revisar el código antes de funsionarlo mediante un Pull Request.
+    6. **Utiliza Issues**: Emplea el sistema de `Issues`  de GitHub para rastrear y gestionar errores, mejoras y otras tareas relacionadas con el proyecto.
+    7.  **Etiquetas y Milestones**: Usa `etiquetas` y `milestones` en `Issues` y `Pull Request` para categorizar y priorizar el trabajo.
+    8. **Documentación**: Mantén la documentación actualizada.
+    9. **Comparte y colabora**: Crea tus propios proyectos de código abierto y colabora en otros.
+    10. **Continua aprendiendo**.
+
+---
+---
+---
