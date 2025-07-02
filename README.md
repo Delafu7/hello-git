@@ -71,9 +71,8 @@ sudo apt-get install git
 
 El archivo `.gitignore` sirve para indicarle a Git qué archivos o carpetas **no deben incluirse** en el control de versiones. Esto es especialmente útil para ignorar archivos temporales, configuraciones locales o compilaciones automáticas.
 
----
-
-#### 📁 ¿Qué se puede ignorar?
+ 
+ 📁 **¿Qué se puede ignorar?**
 
 Puedes usar diferentes mecanismos para especificar qué ignorar:
 
@@ -89,8 +88,7 @@ Puedes usar diferentes mecanismos para especificar qué ignorar:
     - *.log: Ignora todos los archivos que terminen en .log.
     - **/temp/: Ignora cualquier carpeta temp en cualquier subdirectorio.
 
----
-#### Caracteres especiales que puedes usar
+**Caracteres especiales que puedes usar**
 | Patrón | Significado                   | Ejemplo                                                              |
 |--------|-------------------------------|----------------------------------------------------------------------|
 | `*`    | Cero o más caracteres         | `*.tmp` ignora todos los archivos que terminan en `.tmp`            |
@@ -114,14 +112,14 @@ Puedes usar diferentes mecanismos para especificar qué ignorar:
 
 ### Comandos para configuración
 
-#### Configuración básica:
+ **Configuración básica:**
 
 ```bash
 git config --global user.name "Tu Nombre"
 git config --global user.email "tu@email.com"
 ```
 
-#### Configuración avanzada:
+**Configuración avanzada:**
 
 ```bash
 git config --global core.editor "code --wait"
@@ -136,6 +134,7 @@ git config --list
 🔗 [Más sobre configuración en Git](https://git-scm.com/docs/git-config)
 
 ---
+
 ### Comandos imprescindibles
 
 
@@ -164,7 +163,7 @@ Crear un commit:
 git commit -m "Mensaje descriptivo del cambio"
 ```
 
-✅ **Consejo**: Los mensajes de commit deben ser claros, concisos y en infinitivo (ej. `Añadir función de login`).
+> ✅ **Consejo**: Los mensajes de commit deben ser claros, concisos y en infinitivo (ej. `Añadir función de login`).
 
 Ver historial de commits:
 
@@ -191,11 +190,9 @@ git reset --hard            # Borra cambios no confirmados
 ⚠️ ¡Cuidado con `--hard`!
 
 ---
-#### 🔁 Recuperar cambios perdidos: `git reflog`
+🔁 **Recuperar cambios perdidos: `git reflog`**
 
 Si cometes un error con `reset`, `checkout` o `rebase`, puedes recuperar tu trabajo con:
-
-
 
 ```bash
 git reflog
@@ -207,10 +204,10 @@ Ejemplo para restaurar un estado anterior:
 ```bash
 git reset --hard HEAD@{1}
 ```
-💡 git reflog es tu salvavidas cuando algo se borra por accidente.
+> 💡 git reflog es tu salvavidas cuando algo se borra por accidente.
 
 ---
----
+
 ### Alias
   Git nos permite crear alias, para ejecutar comandos largos y complejos de forma sencilla y eficaz.
   ```bash
@@ -218,9 +215,8 @@ git reset --hard HEAD@{1}
   ```
   La <palabra> es la palabra que vamos a identificar para el comando que es representado como <comando>
 
----
 
-#### Alias útiles
+**Alias útiles**
 
 Crear alias personalizados:
 
@@ -232,7 +228,6 @@ git config --global alias.ci commit
 git config --global alias.lg "log --oneline --graph --all"
 ```
 
----
 ---
 ### Git Tag
 
@@ -246,48 +241,48 @@ Estas etiquetas son útiles para:
 
 ---
 
-#### 📌 Tipos de etiquetas
+📌 **Tipos de etiquetas**
 
 | Tipo            | Descripción |
 |------------------|-------------|
 | `lightweight`    | Es como un marcador simple a un commit. No tiene metadatos ni mensaje. |
 | `annotated`      | Incluye información como nombre del autor, fecha, mensaje y firma opcional. Ideal para versiones públicas. |
 
----
 
-#### 🛠️ Comandos útiles
+**Comandos útiles:**
 
-##### Crear una etiqueta ligera:
+Crear una etiqueta ligera:
 
 ```bash
 git tag v1.0
 ```
-##### Crear una etiqueta anotada:
+Crear una etiqueta anotada:
 
 ```bash
 git tag -a v1.0 -m "Versión 1.0 estable"
 ```
-##### Ver todas las etiquetas
+Ver todas las etiquetas:
 ```bash
 git tag
 ```
-##### Ver detalles de una etiqueta anotada:
+Ver detalles de una etiqueta anotada:
 
 ```bash
 git show v1.0
 ```
-##### Etiquetar un commit específico (por hash):
+Etiquetar un commit específico (por hash):
 
 ```bash
 git tag -a v1.1 abc1234 -m "Versión 1.1 sobre commit específico"
 ```
-#### Compartir etiquetas en GitHub
+
+Compartir etiquetas:
 Por defecto, las etiquetas no se suben con `git push`. Para enviarlas:
 ```bash
 git push origin v1.0        # Una etiqueta
 git push origin --tags      # Todas las etiquetas
 ```
-#### Eliminar etiquetas
+Eliminar etiquetas:
 - Localmente:
 ```bash
 git tag -d v1.0
@@ -296,9 +291,8 @@ git tag -d v1.0
 ```bash
 git push origin --delete tag v1.0
 ```
-📝 **Consejo**: Usa etiquetas anotadas (-a) para versiones importantes. Facilitan el mantenimiento y seguimiento del proyecto.
+> 📝 **Consejo**: Usa etiquetas anotadas (-a) para versiones importantes. Facilitan el mantenimiento y seguimiento del proyecto.
 
----
 ---
 ### Ramas y fusión
 
@@ -330,6 +324,7 @@ git branch -d <nombre-rama>
 ---
 
 ### Resolución de conflictos durante un merge
+
 Cuando se produce un conflicto al hacer git merge, Git te pedirá que lo resuelvas manualmente. Sin embargo, puedes usar opciones automáticas para quedarte con una versión específica:
 - Quedarse con los cambios de la rama actual (descartar los de la rama fusionada):
 ```bash
@@ -342,6 +337,7 @@ git merge -X theirs <nombre-rama>
 **`⚠️ Estas opciones solo funcionan si hay un conflicto en el mismo archivo. Se deben usar con precaución, ya que descartan cambios de una de las ramas.`**
 
 ---
+
 ### Comando `git diff`
 
 El comando `git diff` se utiliza para **ver las diferencias** entre:
@@ -351,9 +347,7 @@ El comando `git diff` se utiliza para **ver las diferencias** entre:
 - Dos ramas
 - Staging area y el directorio de trabajo
 
----
-
-#### 🧪 Usos comunes
+🧪 **Usos comunes:**
 
 | Comando | Qué muestra |
 |--------|--------------|
@@ -363,9 +357,8 @@ El comando `git diff` se utiliza para **ver las diferencias** entre:
 | `git diff commit1 commit2` | Diferencias entre dos commits específicos |
 | `git diff archivo.txt` | Diferencias de un archivo concreto respecto al último commit |
 
----
 
-#### 💡 Ejemplo práctico
+💡 **Ejemplo práctico:**
 
 ```bash
 git diff
@@ -381,12 +374,10 @@ git diff main feature-login
 ```
 Muestra los cambios entre la rama main y feature-login.
 
-#### 🎨 Colores
+> Por defecto, las diferencias están coloreadas para facilitar su lectura:
+>   - 🔴 Rojo → líneas eliminadas
+>   - 🟢 Verde → líneas añadidas
 
-    Por defecto, las diferencias están coloreadas para facilitar su lectura:
-     - 🔴 Rojo → líneas eliminadas
-     - 🟢 Verde → líneas añadidas
----
 ---
 ### Git Stash
 
@@ -394,62 +385,67 @@ El comando `git stash` te permite **guardar temporalmente cambios no confirmados
 
 Es ideal cuando necesitas cambiar de rama rápidamente pero no quieres hacer commit aún.
 
----
-
-####📦 Guardar cambios actuales
+📦 **Guardar cambios actuales:**
 
 ```bash
 git stash
 ```
 Esto guarda los cambios y revierte el directorio de trabajo al último commit.
 
-    ✅ Incluye archivos modificados, pero no guarda archivos nuevos sin añadir (untracked) ni ignorados.
----
-#### 📌 Opciones útiles
+> ✅ Incluye archivos modificados, pero no guarda archivos nuevos sin añadir (untracked) ni ignorados.
+    
+📌 **Opciones útiles:**
 
-##### Guardar con mensaje:
+Guardar con mensaje:
 ```bash
 git stash save "mensaje descriptivo"
 ```
-##### Incluir archivos nuevos (`untracked`):
+
+Incluir archivos nuevos (`untracked`):
 ```bash
 git stash -u
 ```
-##### Ver todas las entradas guardadas:
+
+Ver todas las entradas guardadas:
 ```bash
 git stash list
 ```
-##### Ver detalles de un stash:
+
+Ver detalles de un stash:
 ```bash
 git stash show -p stash@{0}
 ```
-#### 🔄 Recuperar cambios guardados
 
-##### Aplicar el stash más reciente:
+🔄 **Recuperar cambios guardados**
+
+Aplicar el stash más reciente:
 ```bash
 git stash apply
 ```
   `Los cambios se aplican pero el stash no se elimina.`
-##### Aplicar y eliminar el stash (recomendado si ya no lo necesitas):
+ 
+Aplicar y eliminar el stash (recomendado si ya no lo necesitas):
 
 ```bash
 git stash pop
 ```
-##### Aplicar un stash específico:
+
+Aplicar un stash específico:
 ```bash
 git stash apply stash@{1}
 ```
-#### 🗑️ Eliminar stashes
+🗑️ **Eliminar stashes**
 
-##### Eliminar uno en específico:
+Eliminar uno en específico:
 ```bash
 git stash drop stash@{0}
 ```
-##### Eliminar todos:
+
+Eliminar todos:
 ```bash
 git stash clear
 ```
----
+
 ---
 
 ### Trabajo con repositorios remotos
@@ -478,7 +474,7 @@ Obtener cambios:
 git pull origin main
 ```
 ---
----
+
 ### Comandos avanzados
 Estos comandos te permiten manipular el historial, depurar errores y mejorar el flujo de trabajo en equipos grandes o proyectos complejos.
 
@@ -489,7 +485,7 @@ Aplica un commit específico de otra rama en tu rama actual.
 ```bash
 git cherry-pick <hash-del-commit>
 ```
-💡 Ideal para aplicar correcciones sin fusionar ramas completas.
+> 💡 Ideal para aplicar correcciones sin fusionar ramas completas.
 
 --- 
 \
@@ -508,8 +504,8 @@ git bisect bad              # el commit actual tiene el bug
 git bisect good <hash>      # este commit funciona correctamente
 ```
 Git irá saltando entre versiones hasta hallar el commit exacto que rompió el código.
-
 ---
+
 \
 `git rebase`
 
@@ -526,8 +522,8 @@ También puedes usar:
 git rebase -i HEAD~3
 ```
 Para editar o combinar los últimos 3 commits interactivamente.
-`⚠️ Evita rebase en ramas compartidas públicamente.`
----
+> ⚠️ Evita rebase en ramas compartidas públicamente.
+
 \
 `git commit --amend`
 
@@ -556,32 +552,33 @@ git clean -n    # Muestra qué se eliminaría
 git clean -f    # Elimina archivos no rastreados
 git clean -fd   # Elimina archivos y carpetas
 ```
----
+
 ---
 ### Submódulos
 Los submódulos te permiten incluir repositorios Git dentro de otro, útil si trabajas con dependencias internas o microservicios.
-#### Añadir un submódulo
 
+Añadir un submódulo:
 ```bash
 git submodule add https://github.com/usuario/proyecto-libreria.git ruta/
 ```
-#### Clonar un repositorio con submódulos
+
+Clonar un repositorio con submódulos:
 ```bash
 git clone --recurse-submodules <url>
 ```
-#### Inicializar y actualizar submódulos
 
+Inicializar y actualizar submódulos:
 ```bash
 git submodule init
 git submodule update
 ```
-#### Actualizar submódulos a la última versión del remoto
 
+Actualizar submódulos a la última versión del remoto:
 ```bash
 git submodule update --remote
 ```
 ---
----
+
 ### Git Hooks
 
 Los hooks son scripts que se ejecutan automáticamente antes o después de acciones como commit, push o merge.
@@ -601,9 +598,10 @@ Actívalo copiando el script en `.git/hooks/pre-commit` y dándole permisos:
 chmod +x .git/hooks/pre-commit
 ```
 
-💡 Herramientas como [Husky](https://typicode.github.io/husky/) te ayudan a gestionar hooks en proyectos modernos.
+>💡 Herramientas como [Husky](https://typicode.github.io/husky/) te ayudan a gestionar hooks en proyectos modernos.
+
 ---
----
+
 ### Tips adicionales
 
 - Usa git status y git log constantemente.
@@ -615,11 +613,10 @@ chmod +x .git/hooks/pre-commit
 - Usa git stash para interrumpir tareas sin perder el trabajo.
 
 - Aprovecha alias para ahorrar tiempo.
+
+  
 ---
----
----
----
----
+
 ## GitHub
 
 ![imagen github](imagenes/github.png)
@@ -645,39 +642,38 @@ Gracias a GitHub, puedes:
 - Documentar proyectos con README.md, wikis y Markdown.
 
 ---
----
 ### Conceptos clave
 
-#### 📁 Repositorio
+📁 **Repositorio**
 
 Un **repositorio** es como una carpeta donde se guarda todo el proyecto: código, historial de cambios, documentación, imágenes, etc.
 👉 [Crear un repositorio](https://docs.github.com/es/repositories/creating-and-managing-repositories/quickstart-for-repositories)
 
-#### 🌿 Rama (Branch)
+🌿 **Rama (Branch)**
 
 Una **rama** permite desarrollar nuevas funcionalidades sin afectar el código principal. La rama por defecto suele llamarse main o master.
 👉 [Gestionar ramas](https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
 
-#### 🆚 Pull Request (PR)
+🆚 **Pull Request (PR)**
 
 Un **pull request** es una solicitud para que tus cambios sean revisados y fusionados en otra rama (normalmente main). Es el centro del trabajo colaborativo.
 👉 [Crear un pull request](https://docs.github.com/es/pull-requests)
 
-#### 🔍 Code Review
+🔍 **Code Review**
 
 Es el proceso de revisar los cambios hechos en un PR. Puedes comentar línea por línea, sugerir mejoras o aprobar directamente los cambios.
 
-#### 🐞 Issues
+🐞 **Issues**
 
 Un **issue** es una tarea o reporte, como un bug, sugerencia o nota. Puedes asignarlos, etiquetarlos y agruparlos en milestones.
 
-#### ⚙️ GitHub Actions
+⚙️ **GitHub Actions**
 
 **GitHub Actions** permite automatizar procesos como pruebas, despliegues o formatos del código, directamente desde GitHub.
 
 👉 [GitHub Actions](https://docs.github.com/es/actions)
 
-#### 🧾 README.md
+🧾 **README.md**
 
 Es el archivo principal de presentación de un proyecto. Se escribe en Markdown y debe explicar:
 
@@ -688,7 +684,7 @@ Es el archivo principal de presentación de un proyecto. Se escribe en Markdown 
   - Créditos, licencia y enlaces útiles.
 
 --- 
----
+
 ### Documentación
 
 
@@ -702,7 +698,6 @@ Es el archivo principal de presentación de un proyecto. Se escribe en Markdown 
 |Seguridad y dependencias| [Ver enlace](https://docs.github.com/es/code-security)|
 
 ---
----
 
 ### Consejos de uso
 
@@ -715,7 +710,6 @@ Es el archivo principal de presentación de un proyecto. Se escribe en Markdown 
 - Configura *GitHub Actions* para CI/CD (pruebas, build, deploy).
 
 ---
----
 ### Markdown
 
 GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) para dar formato a textos. Se usa en archivos `README.md`, issues, wikis, comentarios y documentación.
@@ -723,7 +717,7 @@ GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) pa
 👉[Documentación GitHub escritura Markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 
-#### Ejemplos útiles de sintaxis Markdown:
+**Ejemplos útiles de sintaxis Markdown:**
 
 | Elemento | Sintaxis | Ejemplo |
 |---------|----------|--------|
@@ -739,9 +733,7 @@ GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) pa
 | Cita | `> texto` | > Esto es una cita |
 | Línea horizontal | `---` | --- |
 
----
-
-#### 🧪 Consejos Markdown
+🧪 **Consejos Markdown:**
 
 - Usa títulos para estructurar bien tus archivos `README.md`.
 - Añade capturas con `![nombre](ruta.png)` para guías visuales.
@@ -749,7 +741,7 @@ GitHub usa [Markdown](https://guides.github.com/features/mastering-markdown/) pa
 - Añade tablas para resumir información de forma clara.
 
 ---
----
+
 ### ¿Cómo hacer un Pull Request?
 
  1. **Haz un fork del repositorio (si no tienes acceso directo):**
@@ -803,11 +795,10 @@ cd nombre-del-repo
 - Usa mensajes de commit claros.
 
 - Asegúrate de que el código compile y pase las pruebas.
+---
 
----
----
-## Licencias
-### ❓ ¿Qué es una licencia de software?
+### Licencias
+❓ **¿Qué es una licencia de software?**
 
 Una **licencia de software** indica lo que otros pueden (y no pueden) hacer con tu código. Establece las condiciones bajo las cuales compartes tu proyecto, incluyendo:
 
@@ -819,9 +810,7 @@ Una **licencia de software** indica lo que otros pueden (y no pueden) hacer con 
 
 > ⚠️ Sin una licencia, **por defecto nadie puede reutilizar tu código legalmente**, ni siquiera copiarlo.
 
----
-
-### 🔐 Licencias comunes en GitHub
+🔐 **Licencias comunes en GitHub:**
 
 | Licencia         | Uso comercial | Modificaciones | Distribución | Requiere atribución | Requiere código abierto |
 |------------------|----------------|----------------|--------------|----------------------|--------------------------|
@@ -833,9 +822,8 @@ Una **licencia de software** indica lo que otros pueden (y no pueden) hacer con 
 
 > Puedes consultar una comparación más completa en [choosealicense.com](https://choosealicense.com/)
 
----
 
-### ➕ Cómo añadir una licencia a tu repositorio
+➕ **Cómo añadir una licencia a tu repositorio:**
 
 1. Ve a la raíz del repositorio en GitHub.
 2. Haz clic en **"Add file"** > **"Create new file"**.
@@ -847,20 +835,14 @@ Una **licencia de software** indica lo que otros pueden (y no pueden) hacer con 
      - Haz clic en **"Add a license"** (si está disponible).
      - Elige una licencia y GitHub la generará automáticamente.
 
----
 
-### 📘 Recursos útiles
+ 📘 **Recursos útiles:**
 
 - 🔗 [Elegir una licencia – choosealicense.com](https://choosealicense.com/)
 - 📜 [Licencias disponibles en GitHub](https://docs.github.com/es/github/creating-cloning-and-archiving-repositories/licensing-a-repository)
 - 📄 [Texto completo de la MIT License](https://opensource.org/licenses/MIT)
 - 🏛️ [Creative Commons (para contenido, no software)](https://creativecommons.org/)
 
----
-
-
----
----
 ---
   
 ##  Herramientas para Git y GitHub
@@ -923,34 +905,32 @@ gh repo clone user/repo
   Simulador visual para entender ramas y merges de forma práctica.
 
 ----
-----
-----
+
 
 ## Buenas prácticas
   ### Git
-    1. **Organizar repositorios**: Crear repositorios independientes para distintos proyectos.
-    2. **Utiliza ramas**: Trabaja en ramas separadas para desarrollar nueva funcionalidad, corregir errores o experimentar con tu proyecto.
-    3. **Haz commits atómicos**: Cada `commit` debe representar una única unidad de cambio lógico, para facilitar la revisión y la correcciones en los cambios.
-    4. **Escribe mensajes de commit claros y significativos**.
-    5. **Mantén un historial limpio**: Evita enviar cambios innecesarios o conflictos, y usa la fusión de cambiosade(merge)cuadamente.
-    6. **Usa etiquetas**: Para marcar puntos importantes en el proyecto, como versiones.
-    7. **Haz revisiónes de código**: Antes de integrar el código en la rama principal, realiza una revisión del mismo.
-    8. **Resuelve conflictos**: Esto se aplica en cualquier caso, pero sobretodo a la hora fusionar ramas.
-    9. **Mantén copias de seguridad y haz push con regularidad**.
-    10. **Continua aprendiendo**.
+  1. **Organizar repositorios**: Crear repositorios independientes para distintos proyectos.
+  2. **Utiliza ramas**: Trabaja en ramas separadas para desarrollar nueva funcionalidad, corregir errores o experimentar con tu proyecto.
+  3. **Haz commits atómicos**: Cada `commit` debe representar una única unidad de cambio lógico, para facilitar la revisión y la correcciones en los cambios.
+  4. **Escribe mensajes de commit claros y significativos**.
+  5. **Mantén un historial limpio**: Evita enviar cambios innecesarios o conflictos, y usa la fusión de cambiosade(merge)cuadamente.
+  6. **Usa etiquetas**: Para marcar puntos importantes en el proyecto, como versiones.
+  7. **Haz revisiónes de código**: Antes de integrar el código en la rama principal, realiza una revisión del mismo.
+  8. **Resuelve conflictos**: Esto se aplica en cualquier caso, pero sobretodo a la hora fusionar ramas.
+  9. **Mantén copias de seguridad y haz push con regularidad**.
+  10. **Continua aprendiendo**.
   
   ### GitHub
-    1. **Personaliza tú perfil**.
-    2. **Crea un README**: Debe de proporcionar una descripción general del proyecto, instrucciones de instalación y configuración, información sobre cómo contribuir, y cualquier otra información relevante. 
-    3. **Licencia de software**: Añade una licencia a un repositorio para informar a otros usuarios de como lo pueden utilizar y qué limitaciones posee.
-    4. **Usa Pull Request**: Propon cambios de un repositorio a traves de Pull Request, en vez de modificar directamente la rama principal directamente.
-    5. **Revisión de código**: Revisar el código antes de funsionarlo mediante un Pull Request.
-    6. **Utiliza Issues**: Emplea el sistema de `Issues`  de GitHub para rastrear y gestionar errores, mejoras y otras tareas relacionadas con el proyecto.
-    7.  **Etiquetas y Milestones**: Usa `etiquetas` y `milestones` en `Issues` y `Pull Request` para categorizar y priorizar el trabajo.
-    8. **Documentación**: Mantén la documentación actualizada.
-    9. **Comparte y colabora**: Crea tus propios proyectos de código abierto y colabora en otros.
-    10. **Continua aprendiendo**.
+  1. **Personaliza tú perfil**.
+  2. **Crea un README**: Debe de proporcionar una descripción general del proyecto, instrucciones de instalación y configuración, información sobre cómo contribuir, y cualquier otra información relevante. 
+  3. **Licencia de software**: Añade una licencia a un repositorio para informar a otros usuarios de como lo pueden utilizar y qué limitaciones posee.
+  4. **Usa Pull Request**: Propon cambios de un repositorio a traves de Pull Request, en vez de modificar directamente la rama principal directamente.
+  5. **Revisión de código**: Revisar el código antes de funsionarlo mediante un Pull Request.
+  6. **Utiliza Issues**: Emplea el sistema de `Issues`  de GitHub para rastrear y gestionar errores, mejoras y otras tareas relacionadas con el proyecto.
+  7.  **Etiquetas y Milestones**: Usa `etiquetas` y `milestones` en `Issues` y `Pull Request` para categorizar y priorizar el trabajo.
+  8. **Documentación**: Mantén la documentación actualizada.
+  9. **Comparte y colabora**: Crea tus propios proyectos de código abierto y colabora en otros.
+  10. **Continua aprendiendo**.
 
----
 ---
 ---
