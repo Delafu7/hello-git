@@ -78,7 +78,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'gitGitHubSidebar',
             position: 'left',
-            label: 'Incio',
+            label: 'Inicio',
           },         {
             href: 'https://github.com/Delafu7/hello-git',
             label: 'GitHub',
