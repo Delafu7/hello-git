@@ -1,0 +1,8 @@
+{
+  "label": "Buenas Practicas",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Contains a lot of documentation about git and github"
+  }
+}

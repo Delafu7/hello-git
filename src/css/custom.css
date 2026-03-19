@@ -1,0 +1,75 @@
+/* ===== BASE (resto del sitio) → Magenta/Rosa ===== */
+:root {
+  --ifm-color-primary: #c2185b;
+  --ifm-color-primary-dark: #ad1555;
+  --ifm-color-primary-darker: #a31350;
+  --ifm-color-primary-darkest: #870f42;
+  --ifm-color-primary-light: #d41d66;
+  --ifm-color-primary-lighter: #d92a6f;
+  --ifm-color-primary-lightest: #e04d83;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #e04d83;
+  --ifm-color-primary-dark: #d92a6f;
+  --ifm-color-primary-darker: #d41d66;
+  --ifm-color-primary-darkest: #c2185b;
+  --ifm-color-primary-light: #e86a96;
+  --ifm-color-primary-lighter: #ed82a8;
+  --ifm-color-primary-lightest: #f2a0bc;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== GIT → Naranjas ===== */
+[data-section='git'] {
+  --ifm-color-primary: #e8610a;
+  --ifm-color-primary-dark: #cf560a;
+  --ifm-color-primary-darker: #c45109;
+  --ifm-color-primary-darkest: #a24307;
+  --ifm-color-primary-light: #f06d1a;
+  --ifm-color-primary-lighter: #f1742a;
+  --ifm-color-primary-lightest: #f48b4e;
+}
+
+[data-section='git'][data-theme='dark'] {
+  --ifm-color-primary: #fb923c;
+  --ifm-color-primary-light: #fdba74;
+  --ifm-color-primary-dark: #ea7a1e;
+}
+
+/* ===== GITHUB → Morados ===== */
+[data-section='github'] {
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #6525ce;
+  --ifm-color-primary-darkest: #521eab;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #9468f7;
+  --ifm-color-primary-lightest: #a78bfa;
+}
+
+[data-section='github'][data-theme='dark'] {
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-dark: #8b5cf6;
+}
+
+/* ===== NAVBAR y FOOTER → GIT (naranja) ===== */
+[data-section='git'] .navbar {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+[data-section='git'] .footer {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+/* ===== NAVBAR y FOOTER → GITHUB (morado) ===== */
+[data-section='github'] .navbar {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+[data-section='github'] .footer {
+  background-color: var(--ifm-color-primary-darkest);
+}
